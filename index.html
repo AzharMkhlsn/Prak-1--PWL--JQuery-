@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script type="text/javascript" src="Jquery.js">
+
+ </script>
+
+ <div class="head">
+    <center>
+     <label> Pemesanan Produk</label>
+     <hr>
+    </center> 
+</div>
+</head>
+
+<header class="header">
+ <h2>belum ada pesanan</h2> 
+
+ <tr>
+    <div class="dot">
+     <p><produk>  </p>
+     <p><jumlah></p>
+     </div>
+ </tr>
+
+</header>
+
+<body >
+
+<br>
+    <table class="box">
+        
+     
+   
+        <form>
+            <tr>
+                <td>
+                    <div class="nama">
+                    <label>Nama <br />
+                    <input type="text" id="inputnama"></label><br /> 
+                    </div>
+                </td>
+            </tr>
+           
+            <tr>
+            <td>
+                <br>  <label>Pilih Produk <br />
+           </td>
+        </tr>
+          <br>
+          <tr>
+             <td>
+                 <div class="produk">
+               <label>Produk <br/>
+              <select name='produk', label="Produk" id="produk">
+                <option value='Jet Tempur'>Jet Tempur</option>
+                <option value='Nuklir Hiroshima'>Nuklir Hiroshima</option>
+                <option value='Infinity Stone'>Infinity Stone</option>
+                <option value='Burj Khalifa'> Burj Khalifa</option>
+                <option value='Rudal Hipersonik'>Rudal Hipersonik</option>
+              </select>  
+            </div>
+            </td>
+            <td>
+                <div class="produk">
+                <label>Jumlah <br />
+                    <input type="number" id="jmlh" ></label><br />  
+                </div>
+                </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="button">
+                <input type="submit"  value="Pesan" size="22px" />
+                </div>
+        </td>
+        </tr>
+
+        </form>
+        <script>
+            $(document).ready(function(){
+           
+            $('form').submit(function(){
+                var pesan = $('#inputnama').val();
+                var jumlah = $('#jmlh').val();
+                var produk =$('#produk').val();
+                $('h2').text(pesan);
+                $('produk').text(produk);
+                $('jumlah').text(jumlah);
+
+                event.preventDefault();
+            });
+        });
+        </script>
+    </body>
+    </table>
+
+<style type="text/css">
+    .head{
+        font-family:sans-serif;
+    }
+    .header{
+        font-family:sans-serif;   
+    }
+    .body{
+      
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        margin-right: 20cm;
+       
+    }
+    .box{
+        display: flex;
+        margin-top: 3cm;
+        justify-content: center;
+        align-items: center;
+        font-family:sans-serif;
+        padding: 10px;
+        border: 2px solid rgb(172, 172, 172);
+        border-radius: 5px;
+        width: 60vh;
+        height: 50vh;
+    }
+    .button input{
+        height: 40px;
+        width: 208%;
+        border-radius: 5px;
+        outline: none;
+        background-color: rgb(20, 95, 235);
+        color:aliceblue;
+        border: 2px solid rgb(172, 172, 172);
+
+    }
+    .produk select{
+        height: 37px;
+        width: 80%;
+        border-radius: 4px;
+        border: 2px solid rgb(172, 172, 172);
+    }
+    .produk input{
+        height: 30px;
+        width: 80%;
+        border-radius: 4px;
+        border: 2px solid rgb(172, 172, 172);
+    }
+    .nama input{
+        border: 2px solid rgb(172, 172, 172);
+        height: 30px;
+        width: 203%;
+        background-color:rgb(189, 217, 250) ;
+      
+        border-radius: 4px;
+    }
+    .produk{
+        margin-top:15px ;
+        margin-bottom: 10px;
+    }
+    .dot p{
+        display: inline;
+        margin-left: 20px;
+        
+        display: inline-block;
+    }
+    
+    </style>
+</html>
